@@ -60,21 +60,24 @@
         </ul>
         <div class="container">
           <div class="row">
-            <div class="col-6">
-              <div class="float-left">
-                <span class="temperature" id="temperature">19</span>
-                <span class="units">
-                  <a href="#" id="celciusLink">°C </a> |
-                  <a href="#" id="fahrenheitLink">°F</a>
-                </span>
+            <div class="col-sm-3">
+              <div class="clearfix weather-temperature">
+                <img id="icon" />
               </div>
             </div>
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Humidity: <span id="humidity"></span>%</li>
-              <li>Wind: <span id="wind"></span> km/h</li>
-            </ul>
+            <div class="col-sm-3">
+              <span class="temperature" id="temperature">19</span>
+              <span class="units">
+                <a href="#" id="celciusLink">°C </a> |
+                <a href="#" id="fahrenheitLink">°F</a>
+              </span>
+            </div>
+            <div class="col-sm-3">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="card-group">
@@ -159,6 +162,11 @@
         </div>
       </div>
     </div>
+    <footer>
+      <a href=" https://github.com/kparker0405/weather-app"
+        >Open sourced code </a
+      >by Kat Parker
+    </footer>
     <script src="src/index.js"></script>
   </body>
 </html>

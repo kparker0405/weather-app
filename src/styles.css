@@ -54,3 +54,11 @@ li {
 .search-form {
   margin-bottom: 20px;
 }
+
+footer {
+  text-align: center;
+}
+
+.humiditywind {
+  text-align: right;
+}
