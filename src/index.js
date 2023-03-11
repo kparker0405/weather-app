@@ -1,4 +1,3 @@
-import axios from "axios";
 function formatDate(date) {
   let hours = currentTime.getHours();
   if (hours < 10) {

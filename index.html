@@ -18,150 +18,147 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&family=Rubik+Puddles&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/022043c57d.js"
-      crossorigin="anonymous"
-      src="https://unpkg.com/axios/dist/axios.min.js"
-    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather</title>
   </head>
   <body>
     <div class="container">
-          <div class="weather-app">
-            <form class="search-form" id="search-form">
-              <div class="row">
-                <div class="col-6">
-                  <input
-                    type="search"
-                    placeholder="Type a city.."
-                    autofocus="on"
-                    autocomplete="off"
-                    id="city-input"
-                    class="form-control shadow-sm"
-                  />
-                </div>
-                <div class="col-3">
-                  <input
-                    type="submit"
-                    value="Search"
-                    class="form-control btn btn-primary shadow-sm w-100"
-                  />
-                </div>
-                <div class="col-3">
-                  <button
-                    class="btn btn-success w-100"
-                    id="current-location-button"
-                     >   Current
+      <div class="weather-app">
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm w-100"
+              />
+            </div>
+            <div class="col-3">
+              <button
+                class="btn btn-success w-100"
+                id="current-location-button"
+              >
+                Current
               </button>
             </div>
           </div>
         </form>
-   <h1 id="city">
-   </h1>
-   <ul>
-     <li id="date">
-     </li>
-     <li id="description">
-     </li>
-    </ul>
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <div class="float-left">
-            <span class="temperature" id="temperature">19</span>
-            <span class="units">
-              <a href="#" id="celciusLink">°C </a> | 
-              <a href="#" id="fahrenheitLink">°F</a>
-            </span>
-        </div>
-      </div>
-      <div class="col-6">
+        <h1 id="city"></h1>
         <ul>
-          <li>Humidity: <span id="humidity"></span>%</li>
-          <li>Wind:  <span id="wind"></span> km/h</li>
+          <li id="date"></li>
+          <li id="description"></li>
         </ul>
-    </div>
-    <div class="card-group">
-      <div class="card">
-        <div class="card-body">
-          <i class="fa-solid fa-cloud"></i>
-          <h5 class="card-title">
-            <strong>47°</strong> <small class="text-muted">/45°</small>
-          </h5>
-          <p class="card-text">
-            Thurs <br />
-            12/29
-          </p>
-          <p class="card-text">
-            <small>Becoming cloudy and mild</small>
-          </p>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <div class="float-left">
+                <span class="temperature" id="temperature">19</span>
+                <span class="units">
+                  <a href="#" id="celciusLink">°C </a> |
+                  <a href="#" id="fahrenheitLink">°F</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
+          </div>
         </div>
-      </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <i class="fa-solid fa-cloud"></i>
+              <h5 class="card-title">
+                <strong>47°</strong> <small class="text-muted">/45°</small>
+              </h5>
+              <p class="card-text">
+                Thurs <br />
+                12/29
+              </p>
+              <p class="card-text">
+                <small>Becoming cloudy and mild</small>
+              </p>
+            </div>
+          </div>
 
-      <div class="card">
-        <div class="card-body">
-          <i class="fa-solid fa-cloud"></i>
-          <h5 class="card-title">
-            <strong>52°</strong> <small class="text-muted">/30°</small>
-          </h5>
-          <p class="card-text">
-            Fri <br />
-            12/30
-          </p>
-          <p class="card-text">
-            <small>Fog in the morning; cloudy</small>
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <i class="fa-solid fa-snowflake"></i>
-          <h5 class="card-title">
-            <strong>41°</strong> <small class="text-muted">/32°</small>
-          </h5>
-          <p class="card-text">
-            Sat <br />
-            12/31
-          </p>
-          <p class="card-text">
-            <small>Cooler; afternoon snow, 1-2"</small>
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <i class="fa-solid fa-cloud"></i>
-          <h5 class="card-title">
-            <strong>44°</strong> <small class="text-muted">/33°</small>
-          </h5>
-          <p class="card-text">
-            Sun <br />
-            1/1
-          </p>
-          <p class="card-text">
-            <small>Low clouds may break</small>
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <i class="fa-solid fa-cloud-rain"></i>
-          <h5 class="card-title">
-            <strong>45°</strong> <small class="text-muted">/42°</small>
-          </h5>
-          <p class="card-text">
-            Monday <br />
-            1/2
-          </p>
-          <p class="card-text">
-            <small>Cloudy, becoming breezy with late-night rain</small>
-          </p>
+          <div class="card">
+            <div class="card-body">
+              <i class="fa-solid fa-cloud"></i>
+              <h5 class="card-title">
+                <strong>52°</strong> <small class="text-muted">/30°</small>
+              </h5>
+              <p class="card-text">
+                Fri <br />
+                12/30
+              </p>
+              <p class="card-text">
+                <small>Fog in the morning; cloudy</small>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <i class="fa-solid fa-snowflake"></i>
+              <h5 class="card-title">
+                <strong>41°</strong> <small class="text-muted">/32°</small>
+              </h5>
+              <p class="card-text">
+                Sat <br />
+                12/31
+              </p>
+              <p class="card-text">
+                <small>Cooler; afternoon snow, 1-2"</small>
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <i class="fa-solid fa-cloud"></i>
+              <h5 class="card-title">
+                <strong>44°</strong> <small class="text-muted">/33°</small>
+              </h5>
+              <p class="card-text">
+                Sun <br />
+                1/1
+              </p>
+              <p class="card-text">
+                <small>Low clouds may break</small>
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <i class="fa-solid fa-cloud-rain"></i>
+              <h5 class="card-title">
+                <strong>45°</strong> <small class="text-muted">/42°</small>
+              </h5>
+              <p class="card-text">
+                Monday <br />
+                1/2
+              </p>
+              <p class="card-text">
+                <small>Cloudy, becoming breezy with late-night rain</small>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <footer> 
-      Come see my  <a href="https://github.com/kparker0405/weather-app" target="_blank">Github</a> 
-    </footer>
-   <script src="src/index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
