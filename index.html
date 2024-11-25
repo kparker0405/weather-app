@@ -22,151 +22,43 @@
     <title>Weather</title>
   </head>
   <body>
-    <div class="container">
-      <div class="weather-app">
+    <div class="weather-app">
+      <header>
         <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-6">
-              <input
-                type="search"
-                placeholder="Type a city.."
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                class="form-control shadow-sm"
-              />
-            </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="form-control btn btn-primary shadow-sm w-100"
-              />
-            </div>
-            <div class="col-3">
-              <button
-                class="btn btn-success w-100"
-                id="current-location-button"
-              >
-                Current
-              </button>
-            </div>
-          </div>
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            id="search-form-input"
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
         </form>
-        <h1 id="city"></h1>
-        <ul>
-          <li id="date"></li>
-          <li id="description"></li>
-        </ul>
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <div class="clearfix weather-temperature">
-                <img id="icon" class="float-left" />
-                <div class="float-left">
-                  <span class="temperature" id="temperature">19</span>
-                  <span class="units">
-                    <a href="#" id="celciusLink">°C </a> |
-                    <a href="#" id="fahrenheitLink">°F</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
-              </ul>
-            </div>
+      </header>
+      <main>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weather-app-city" id="city">Grand Rapids</h1>
+            <p class="weather-app-details">
+              Tuesday 14:49, scattered clouds<br />Humidity:
+              <strong>66%</strong>, Wind: <strong>3.31</strong>
+              km/h
+            </p>
+          </div>
+          <div class="weather-app-temperature-container">
+            <div class="weather-app-icon">🌤</div>
+            <div class="weather-app-temperature" id="temperature">12</div>
+            <div class="weather-app-unit">°C</div>
           </div>
         </div>
-        <div class="card-group">
-          <div class="card">
-            <div class="card-body">
-              <i class="fa-solid fa-cloud"></i>
-              <h5 class="card-title">
-                <strong>47°</strong> <small class="text-muted">/45°</small>
-              </h5>
-              <p class="card-text">
-                Thurs <br />
-                12/29
-              </p>
-              <p class="card-text">
-                <small>Becoming cloudy and mild</small>
-              </p>
-            </div>
-          </div>
+      </main>
 
-          <div class="card">
-            <div class="card-body">
-              <i class="fa-solid fa-cloud"></i>
-              <h5 class="card-title">
-                <strong>52°</strong> <small class="text-muted">/30°</small>
-              </h5>
-              <p class="card-text">
-                Fri <br />
-                12/30
-              </p>
-              <p class="card-text">
-                <small>Fog in the morning; cloudy</small>
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <i class="fa-solid fa-snowflake"></i>
-              <h5 class="card-title">
-                <strong>41°</strong> <small class="text-muted">/32°</small>
-              </h5>
-              <p class="card-text">
-                Sat <br />
-                12/31
-              </p>
-              <p class="card-text">
-                <small>Cooler; afternoon snow, 1-2"</small>
-              </p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <i class="fa-solid fa-cloud"></i>
-              <h5 class="card-title">
-                <strong>44°</strong> <small class="text-muted">/33°</small>
-              </h5>
-              <p class="card-text">
-                Sun <br />
-                1/1
-              </p>
-              <p class="card-text">
-                <small>Low clouds may break</small>
-              </p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <i class="fa-solid fa-cloud-rain"></i>
-              <h5 class="card-title">
-                <strong>45°</strong> <small class="text-muted">/42°</small>
-              </h5>
-              <p class="card-text">
-                Monday <br />
-                1/2
-              </p>
-              <p class="card-text">
-                <small>Cloudy, becoming breezy with late-night rain</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <footer>
+        <a href=" https://github.com/kparker0405/weather-app"
+          >Open sourced code </a
+        >by Kat Parker
+      </footer>
     </div>
-    <footer>
-      <a href=" https://github.com/kparker0405/weather-app"
-        >Open sourced code </a
-      >by Kat Parker
-    </footer>
     <script src="src/index.js"></script>
   </body>
 </html>

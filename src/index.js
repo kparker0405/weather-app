@@ -1,4 +1,45 @@
-function formatDate(date) {
+function refreshWeather(response) {
+  let temperatureElement = document.querySelector("#temperature");
+  let celciusTemperature = response.data.main.temp;
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
+/*
+  let iconElement = document.querySelector("#icon");
+  
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  document.querySelector("#city").innerHTML = response.data.name;
+ 
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;*/
+
+function searchCity(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(refreshWeather);
+}
+
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-form-input");
+  searchCity(searchInput.value);
+}
+
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearchSubmit);
+
+/*function formatDate(date) {
   let hours = currentTime.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -50,6 +91,7 @@ function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
   searchCity(city);
+  console.log(searchCity.value);
 }
 
 function searchLocation(position) {
@@ -85,15 +127,12 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
 let fahrenheitLink = document.querySelector("#fahrenheitLink");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celciusLink = document.querySelector("#celciusLink");
 celciusLink.addEventListener("click", convertToCelcius);
 
 let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
+currentLocationButton.addEventListener("click", getCurrentLocation);*/
 
 searchCity("Detroit");
